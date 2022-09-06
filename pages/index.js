@@ -5,10 +5,19 @@ import { initFirebase } from '../firebase/firebase';
 import styles from '../styles/Home.module.scss';
 import Intro from '../components/sections/intro/Intro';
 import CaseStudies from '../components/sections/caseStudies/CaseStudies';
+import { useRef } from 'react';
 
 initFirebase();
 
 export default function Home() {
+  const caseStudiesRef = useRef();
+
+  const handleClick = () => {
+    console.log('Clicked');
+    console.log(caseStudiesRef);
+    caseStudiesRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <Head>
@@ -20,8 +29,8 @@ export default function Home() {
         <Container>
           <Header />
         </Container>
-        <Intro />
-        <CaseStudies />
+        <Intro onClick={handleClick} />
+        <CaseStudies ref={caseStudiesRef} />
       </main>
     </>
   );

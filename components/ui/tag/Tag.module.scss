@@ -1,0 +1,15 @@
+.tag {
+    margin-top: var(--span-s);
+    padding: 5px var(--span-xs);
+    border-radius: 2px;
+    max-width: max-content;
+
+    &__text {
+        font-family: var(--Satoshi);
+        font-size: calc(var(--size-xs) + 1px);
+        font-weight: var(--weight-sm);
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+}

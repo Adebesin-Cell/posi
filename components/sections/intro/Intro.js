@@ -1,7 +1,7 @@
 import styles from './Intro.module.scss';
 import Container from '../../ui/container/Container';
 import Image from 'next/image';
-import Avatar from '../../../assets/images/posi.png';
+import Avatar from '../../../assets/images/avatar.png';
 import {
   BehanceIcon,
   DribbbleIcon,
@@ -10,7 +10,7 @@ import {
   TwitterIcon,
 } from '../../../utils/icons/Icons';
 
-const Intro = function () {
+const Intro = function (props) {
   return (
     <section className={styles.intro}>
       <Container>
@@ -55,12 +55,13 @@ const Intro = function () {
                   className={styles.intro__image}
                   alt='Adekanmbi Ayomiposi Portfolio'
                 ></Image>
+                <div className={styles.intro__overlay}>&nbsp;</div>
               </div>
             </div>
           </Container>
         </div>
         <div className={styles.intro__flow}>
-          <FlowIcon />
+          <FlowIcon onClick={props.onClick} />
         </div>
       </Container>
     </section>

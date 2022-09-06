@@ -1,11 +1,20 @@
 import WorkCard from './WorkCard';
 import styles from './Works.module.scss';
-import caseStudy from '../../assets/images/casestudy--1.png';
+import { CaseStudies } from '../../data/CaseStudy';
 
 const Works = function () {
   return (
     <ul className={styles.list}>
-      <WorkCard image={caseStudy}></WorkCard>
+      {CaseStudies.map((caseStudy) => (
+        <WorkCard
+          key={caseStudy.id}
+          image={caseStudy.image}
+          title={caseStudy.title}
+          name={caseStudy.name}
+          description={caseStudy.description}
+          {...caseStudy}
+        ></WorkCard>
+      ))}
     </ul>
   );
 };
