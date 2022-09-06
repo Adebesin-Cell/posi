@@ -5,6 +5,7 @@ import { initFirebase } from '../firebase/firebase';
 import FontLinks from '../utils/FontLinks';
 import styles from '../styles/Home.module.scss';
 import Intro from '../components/sections/intro/Intro';
+import CaseStudies from '../components/sections/caseStudies/CaseStudies';
 
 initFirebase();
 
@@ -22,6 +23,7 @@ export default function Home() {
           <Header />
         </Container>
         <Intro />
+        <CaseStudies />
       </main>
     </>
   );
