@@ -55,4 +55,16 @@ export const CaseStudies = [
     caseStudyLink: '/case-study/4',
     description: 'A NFT website landing page design',
   },
+  {
+    id: 5,
+    title: 'Product Designer',
+    name: 'NFT Cards',
+    image: caseStudyThree,
+    tag: 'E-commerce',
+    tagBackground: '#FFA500',
+    tagColor: '#141414',
+    liveLink: '',
+    caseStudyLink: '/case-study/4',
+    description: 'A NFT website landing page design',
+  },
 ];
