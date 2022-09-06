@@ -1,6 +1,6 @@
 import WorkCard from './WorkCard';
 import styles from './Works.module.scss';
-import caseStudy from '../../assets/images/caseStudy--1.png';
+import caseStudy from '../../assets/images/casestudy--1.png';
 
 const Works = function () {
   return (
