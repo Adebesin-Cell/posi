@@ -1,7 +1,7 @@
-import caseStudy from '../assets/images/casestudy--0.png';
-import caseStudyOne from '../assets/images/casestudy--1.png';
-import caseStudyTwo from '../assets/images/casestudy--2.png';
-import caseStudyThree from '../assets/images/casestudy--3.png';
+import caseStudy from '../assets/images/caseStudy--0.png';
+import caseStudyOne from '../assets/images/caseStudy--1.png';
+import caseStudyTwo from '../assets/images/caseStudy--2.png';
+import caseStudyThree from '../assets/images/caseStudy--3.png';
 
 export const CaseStudies = [
   {

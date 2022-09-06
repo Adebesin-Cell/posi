@@ -13,8 +13,6 @@ export default function Home() {
   const caseStudiesRef = useRef();
 
   const handleClick = () => {
-    console.log('Clicked');
-    console.log(caseStudiesRef);
     caseStudiesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
