@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--span-xl);
+
+    &__logo {
+        display: flex;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}

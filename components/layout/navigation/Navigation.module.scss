@@ -1,0 +1,27 @@
+.nav {
+    align-self: center;
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: calc(var(--span-2xl) + var(--span-m));
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-family: var(--Satoshi);
+        font-size: var(--size-m);
+        font-weight: var(--weight-sm);
+        line-height: 22px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: var(--black-500);
+        text-transform: capitalize;
+    }
+}

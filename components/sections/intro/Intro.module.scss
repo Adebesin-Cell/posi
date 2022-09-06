@@ -1,0 +1,8 @@
+.intro {
+    padding-top: var(--span-2xl);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}

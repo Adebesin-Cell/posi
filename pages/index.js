@@ -1,6 +1,10 @@
 import Head from 'next/head';
+import Header from '../components/layout/header/Header';
+import Container from '../components/ui/container/Container';
 import { initFirebase } from '../firebase/firebase';
 import FontLinks from '../utils/FontLinks';
+import styles from '../styles/Home.module.scss';
+import Intro from '../components/sections/intro/Intro';
 
 initFirebase();
 
@@ -13,6 +17,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <FontLinks />
       </Head>
+      <main className={styles.home}>
+        <Container>
+          <Header />
+        </Container>
+        <Intro />
+      </main>
     </>
   );
 }
