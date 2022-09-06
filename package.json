@@ -19,6 +19,7 @@
     "sass": "^1.54.8"
   },
   "devDependencies": {
+    "@iconify/react": "^3.2.2",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5"
   }
