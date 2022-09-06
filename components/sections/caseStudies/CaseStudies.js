@@ -1,5 +1,5 @@
 import Container from '../../ui/container/Container';
-import styles from './CaseStudies.module.scss';
+import styles from './caseStudies.module.scss';
 import Works from '../../works/Works';
 
 const CaseStudies = function () {
