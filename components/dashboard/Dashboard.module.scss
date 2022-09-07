@@ -37,4 +37,18 @@
         text-align: center;
         color: var(--black-900);
     }
+
+    &__container {
+        margin-top: calc(1.1 * var(--span-2xl));
+    }
+
+    &__heading {
+        font-family: var(--Clash-Display);
+        font-size: calc(var(--size-l) + 1px);
+        font-weight: var(--weight-lg);
+        line-height: 31px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: var(--black-900);
+    }
 }

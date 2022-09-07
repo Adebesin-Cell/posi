@@ -21,6 +21,9 @@ const Dashboard = function () {
             <p className={styles.dashboard__paragraph}>Experiences</p>
           </div>
         </div>
+        <div className={styles.dashboard__container}>
+          <h1 className={styles.dashboard__heading}>Recent Activities</h1>
+        </div>
       </DashboardWrapper>
     </div>
   );
