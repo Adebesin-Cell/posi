@@ -4,7 +4,7 @@ const Button = function (props) {
   const classes = `${styles.button} ${props.className}`;
 
   return (
-    <button className={classes} {...props}>
+    <button {...props} className={classes}>
       {props.children}
     </button>
   );

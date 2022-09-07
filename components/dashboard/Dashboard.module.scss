@@ -2,4 +2,39 @@
     position: relative;
     background: var(--white-900);
     flex: 1 1 0%;
+
+    &__wrapper {
+        margin-top: var(--span-xl);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--span-2xl);
+    }
+
+    &__card {
+        padding: calc(var(--span-2xl) + var(--span-xs));
+        background: var(--white-900);
+        box-shadow: 0px 10px 30px rgba(130, 130, 130, 0.11);
+        border-radius: 13px;
+    }
+
+    &__title {
+        font-family: var(--Clash-Display);
+        font-size: calc(var(--size-2xl) + var(--size-xs));
+        font-weight: var(--weight-xlg);
+        line-height: 74px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: var(--black-900);
+    }
+
+    &__paragraph {
+        margin-top: var(--span-xs);
+        font-family: var(--Satoshi);
+        font-size: calc(var(--size-m) + 2px);
+        font-weight: var(--weight-xlg);
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: var(--black-900);
+    }
 }
