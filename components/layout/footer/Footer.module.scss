@@ -31,4 +31,30 @@
         text-align: center;
         color: var(--white-900);
     }
+
+    &__link--box {
+        display: flex;
+        margin-top: var(--span-m);
+        justify-content: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        border: 1px solid #FFFFFF;
+        padding: calc(var(--span-xs) + 5px) var(--span-m);
+        font-family: var(--Satoshi);
+        font-size: calc(var(--size-xs) + 1px);
+        font-weight: var(--weight-xlg);
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: var(--white-900);
+        transition: all 300ms;
+        text-transform: capitalize;
+
+        &:hover {
+            background: var(--white-900);
+            color: var(--black-900);
+        }
+    }
 }

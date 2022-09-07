@@ -25,6 +25,10 @@
         text-transform: capitalize;
         transition: all 300ms;
 
+        &--active {
+            color: var(--white-900);
+        }
+
         &:hover {
             color: var(--white-900);
         }

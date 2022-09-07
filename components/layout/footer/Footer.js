@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import styles from './Footer.module.scss';
 import background from '../../../assets/images/footer-bg.png';
+import Link from 'next/link';
 
 const Footer = function () {
   return (
@@ -12,6 +14,13 @@ const Footer = function () {
         <p className={styles.footer__paragraph}>
           I write blogs on UI/UX design when I'm less busy.
         </p>
+        <div className={styles['footer__link--box']}>
+          <Link href='/blog' name='Blog'>
+            <a name='Blog' className={styles.footer__link}>
+              Go to blog
+            </a>
+          </Link>
+        </div>
       </div>
     </footer>
   );

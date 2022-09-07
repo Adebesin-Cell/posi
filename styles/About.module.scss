@@ -1,0 +1,19 @@
+.about {
+    background: var(--black-900);
+    min-height: 100vh;
+
+    &__heading {
+        margin-top: calc(3 * var(--span-xl));
+        font-family: var(--Clash-Display);
+        font-size: calc(3 * (var(--size-2xl) + 2px));
+        font-weight: var(--weight-xlg);
+        line-height: 185px;
+        letter-spacing: 0.07em;
+        text-align: center;
+        color: var(--black-900);
+        text-shadow: -1px 1px 0 var(--white-900),
+            1px 1px 0 var(--white-900),
+            1px -1px 0 var(--white-900),
+            -1px -1px 0 var(--white-900);
+    }
+}
