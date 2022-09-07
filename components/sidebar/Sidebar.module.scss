@@ -1,0 +1,18 @@
+.sidebar {
+    width: 250px;
+    background: var(--black-900);
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    z-index: 2;
+    padding-top: calc(var(--span-2xl) + var(--span-xs));
+
+    &__logo {
+        padding-left: var(--span-l);
+
+        &__link {
+            text-decoration: none;
+            display: flex;
+        }
+    }
+}
