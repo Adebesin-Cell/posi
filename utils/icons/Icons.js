@@ -1,4 +1,4 @@
-export const TwitterIcon = function () {
+export const DribbbleIcon = function () {
   return (
     <svg
       width='40'
@@ -46,7 +46,7 @@ export const LinkedInIcon = function () {
   );
 };
 
-export const DribbbleIcon = function () {
+export const TwitterIcon = function () {
   return (
     <svg
       width='40'

@@ -1,7 +1,6 @@
 import styles from './Intro.module.scss';
 import Container from '../../ui/container/Container';
 import Image from 'next/image';
-import Avatar from '../../../assets/images/avatar.png';
 import {
   BehanceIcon,
   DribbbleIcon,
@@ -9,6 +8,7 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '../../../utils/icons/Icons';
+import Avatar from '../../avatar/Avatar';
 
 const Intro = function (props) {
   return (
@@ -28,35 +28,48 @@ const Intro = function (props) {
                 </p>
                 <ul className={styles.intro__list}>
                   <li className={styles.intro__item}>
-                    <a href='https://lol.com' className={styles.intro__link}>
+                    <a
+                      href='https://www.linkedin.com/login'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={styles.intro__link}
+                    >
                       <LinkedInIcon />
                     </a>
                   </li>
                   <li className={styles.intro__item}>
-                    <a href='https://lol.com' className={styles.intro__link}>
+                    <a
+                      href='https://dribbble.com/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={styles.intro__link}
+                    >
                       <DribbbleIcon />
                     </a>
                   </li>
                   <li className={styles.intro__item}>
-                    <a href='https://lol.com' className={styles.intro__link}>
+                    <a
+                      href='https://twitter.com/login'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={styles.intro__link}
+                    >
                       <TwitterIcon />
                     </a>
                   </li>
                   <li className={styles.intro__item}>
-                    <a href='https://lol.com' className={styles.intro__link}>
+                    <a
+                      href='https://www.behance.net/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={styles.intro__link}
+                    >
                       <BehanceIcon />
                     </a>
                   </li>
                 </ul>
               </div>
-              <div className={styles['intro__image-box']}>
-                <Image
-                  src={Avatar}
-                  className={styles.intro__image}
-                  alt='Adekanmbi Ayomiposi Portfolio'
-                ></Image>
-                <div className={styles.intro__overlay}>&nbsp;</div>
-              </div>
+              <Avatar className={styles['intro__image-box']} />
             </div>
           </Container>
         </div>

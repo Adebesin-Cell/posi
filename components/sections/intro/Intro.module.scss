@@ -53,6 +53,17 @@
         border-radius: 4px;
     }
 
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        border: 5px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+
     &__image-box {
         position: relative;
         transform: translateX(-50px);
@@ -73,16 +84,6 @@
         }
     }
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        border: 5px solid rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
-    }
 
     &__list {
         margin-top: var(--span-m);

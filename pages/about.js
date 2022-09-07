@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import AboutMe from '../components/about/AboutMe';
 import Header from '../components/layout/header/Header';
 import Container from '../components/ui/container/Container';
 import styles from '../styles/About.module.scss';
@@ -19,6 +20,7 @@ const About = function () {
           <Container>
             <h1 className={styles.about__heading}>ABOUT ME</h1>
           </Container>
+          <AboutMe />
         </main>
       </>
     </>
