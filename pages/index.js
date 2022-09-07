@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.scss';
 import Intro from '../components/sections/intro/Intro';
 import CaseStudies from '../components/sections/caseStudies/CaseStudies';
 import { useRef } from 'react';
+import Footer from '../components/layout/footer/Footer';
 
 initFirebase();
 
@@ -29,6 +30,7 @@ export default function Home() {
         </Container>
         <Intro onClick={handleClick} />
         <CaseStudies ref={caseStudiesRef} />
+        <Footer />
       </main>
     </>
   );
