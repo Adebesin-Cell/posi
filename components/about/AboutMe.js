@@ -98,6 +98,42 @@ const AboutMe = function () {
           </div>
         </div>
       </Container>
+      <Container>
+        <div className={styles.contact}>
+          <h1 className={styles.contact__heading}>Contact</h1>
+          <div className={styles.contact__wrapper}>
+            <div className={styles.contact__box}>
+              <p className={styles.contact__paragraph}>
+                Contact me and lets work together
+              </p>
+            </div>
+            <div className={styles.contact__box}>
+              <ul className={styles.contact__list}>
+                <li className={styles.contact__item}>
+                  <a
+                    href='mailto:adekanmbiayomiposi@gmail.com'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={styles.contact__link}
+                  >
+                    adekanmbiayomiposi@gmail.com
+                  </a>
+                </li>
+                <li className={styles.contact__item}>
+                  <a
+                    href=''
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={styles.contact__link}
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Container>
     </section>
   );
 };
