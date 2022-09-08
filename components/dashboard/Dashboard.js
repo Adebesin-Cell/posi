@@ -27,7 +27,6 @@ const Dashboard = function () {
           <h1 className={styles.dashboard__heading}>Recent Activities</h1>
           <Table
             fields={['#', 'Image', 'Title', 'Category', 'Date']}
-            actions={false}
             data={tableData}
           />
         </div>

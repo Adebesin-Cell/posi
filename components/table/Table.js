@@ -12,6 +12,7 @@ const Table = function (props) {
           {props.fields.map((field, i) => (
             <th key={i}>{field}</th>
           ))}
+          {props.actions && <th>Actions</th>}
         </tr>
       </thead>
       <tbody>
@@ -27,13 +28,21 @@ const Table = function (props) {
               </td>
             ))}
             {props.actions && (
-              <td className={styles.table__action}>
-                <Link href='edit' className={styles.table__link}>
-                  <EditIcon />
-                </Link>
-                <Button className={styles.table__button}>
-                  <ThrashIcon />
-                </Button>
+              <td>
+                <div className={styles.table__action}>
+                  <Link href='edit' className={styles.table__link} title='Edit'>
+                    <a title='Edit' className={styles.table__link} name='Edit'>
+                      <EditIcon />
+                    </a>
+                  </Link>
+                  <Button
+                    className={styles.table__button}
+                    title='Delete'
+                    name='Delete'
+                  >
+                    <ThrashIcon />
+                  </Button>
+                </div>
               </td>
             )}
           </tr>
