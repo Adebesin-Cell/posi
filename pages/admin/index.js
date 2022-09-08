@@ -1,9 +1,21 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Head from 'next/head';
 import Sidebar from '../../components/sidebar/Sidebar';
 import styles from '../../styles/Admin.module.scss';
 import Dashboard from '../../components/dashboard/Dashboard';
+import { useContext, useEffect } from 'react';
+import AuthContext from '../../store/auth-context';
+import { useRouter } from 'next/router';
 
 const admin = function () {
+  const router = useRouter();
+
+  const authCtx = useContext(AuthContext);
+
+  useEffect(() => {
+    authCtx.isAuthenticated ? router.push('/admin') : router.push('/auth');
+  }, [authCtx, router]);
+
   return (
     <>
       <Head>

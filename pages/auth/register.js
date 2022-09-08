@@ -5,14 +5,21 @@ import Button from '../../components/ui/button/Button';
 import Input from '../../components/ui/input/Input';
 import styles from '../../styles/Auth.module.scss';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
+import AuthContext from '../../store/auth-context';
 
 const Register = function () {
   const router = useRouter();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const authCtx = useContext(AuthContext);
 
-  const formSubmitHandler = function (e) {
+  const authenticateUserHandler = function (user) {
+    authCtx.login(user);
+    router.replace('/admin');
+  };
+
+  const formSubmitHandler = async function (e) {
     e.preventDefault();
 
     const emailValue = emailRef.current.value;
@@ -22,7 +29,32 @@ const Register = function () {
       emailValue.trim() === process.env.NEXT_ADMIN_USERNAME &&
       passwordValue === process.env.NEXT_ADMIN_PASSWORD
     ) {
-      router.push('/admin');
+      try {
+        const response = await fetch(
+          `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: emailValue,
+              password: passwordValue,
+              returnSecureToken: true,
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(response.body);
+        }
+
+        const user = await response.json();
+        console.log(user);
+        authenticateUserHandler(user);
+      } catch (err) {
+        console.log(err);
+      }
     } else {
       alert('Incorrect Details');
     }

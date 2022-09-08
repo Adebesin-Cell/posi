@@ -1,7 +1,12 @@
 import Logo from '../logo/Logo';
 import styles from './Sidebar.module.scss';
 import Link from 'next/link';
-import { AboutIcon, BlogIcon, OverviewIcon } from '../../utils/icons/Icons';
+import {
+  AboutIcon,
+  BlogIcon,
+  CaseStudyIcon,
+  OverviewIcon,
+} from '../../utils/icons/Icons';
 import { useRouter } from 'next/router';
 
 const Sidebar = function () {
@@ -84,7 +89,7 @@ const Sidebar = function () {
               }
             >
               <span className={styles.sidebar__icon}>
-                <AboutIcon />
+                <CaseStudyIcon />
               </span>
               <span className={styles.sidebar__text}>Case Study</span>
             </a>
