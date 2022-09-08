@@ -71,14 +71,14 @@ const Sidebar = function () {
         </li>
         <li className={styles.sidebar__item}>
           <Link
-            href='/admin/case-study'
+            href='admin/case-study'
             name='Case Studies'
             className={styles.sidebar__link}
           >
             <a
               name='Case Studies'
               className={
-                router.pathname === '/admin/case-study'
+                router.pathname === 'admin/case-study'
                   ? activeClass
                   : inActiveClass
               }

@@ -10,16 +10,16 @@ const Table = function (props) {
       <thead className={styles.table__header}>
         <tr>
           {props.fields.map((field, i) => (
-            <th key={field}>{field}</th>
+            <th key={field + i}>{field}</th>
           ))}
           {props.actions && <th>Actions</th>}
         </tr>
       </thead>
       <tbody>
         {props.data.map((item, i) => (
-          <tr key={item.id + item[i].title}>
+          <tr key={item.id + '--field'}>
             {item.map((field, i) => (
-              <td key={i}>
+              <td key={i + field.value}>
                 {field.image ? (
                   <Image src={field.image} alt={field.title} />
                 ) : (
