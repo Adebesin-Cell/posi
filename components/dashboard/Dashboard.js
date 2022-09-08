@@ -1,6 +1,8 @@
+import Table from '../table/Table';
 import Topbar from '../topbar/Topbar';
 import styles from './Dashboard.module.scss';
 import DashboardWrapper from './wrapper/Wrapper';
+import { tableData } from './DashboardTable';
 
 const Dashboard = function () {
   return (
@@ -23,6 +25,11 @@ const Dashboard = function () {
         </div>
         <div className={styles.dashboard__container}>
           <h1 className={styles.dashboard__heading}>Recent Activities</h1>
+          <Table
+            fields={['#', 'Image', 'Title', 'Category', 'Date']}
+            actions={false}
+            data={tableData}
+          />
         </div>
       </DashboardWrapper>
     </div>
