@@ -1,0 +1,25 @@
+.view {
+    position: relative;
+    background: var(--white-900);
+    flex: 1 1 0%;
+
+    &__wrapper {
+        margin-top: var(--span-xl);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__add {
+        cursor: pointer;
+        background: rgba(235, 235, 235, 0.4);
+        border: 3px solid var(--white-900);
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--span-xl);
+        width: 320px;
+        height: 320px;
+    }
+}

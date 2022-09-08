@@ -262,3 +262,59 @@ export const CaseStudyIcon = function () {
     </svg>
   );
 };
+
+export const CaseStudyIcon2 = function () {
+  return (
+    <svg
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20.7857C7.14286 20.7857 3.28571 16.8571 3.28571 12C3.28571 7.14286 7.14286 3.28571 12 3.28571C16.8571 3.28571 20.7857 7.21429 20.7857 12.0714C20.7857 16.8571 16.8571 20.7857 12 20.7857Z'
+        fill='white'
+        stroke='white'
+        strokeWidth='0.5'
+      />
+      <path
+        d='M8.85742 15.1429L10.5003 14.5714L9.42885 13.5L8.85742 15.1429Z'
+        fill='white'
+      />
+      <path
+        d='M13.7859 9.07143L9.92871 12.9286L11.0001 14L14.8573 10.1429C15.143 9.85715 15.143 9.35715 14.8573 9.07143C14.5716 8.78572 14.0716 8.78572 13.7859 9.07143Z'
+        fill='white'
+      />
+    </svg>
+  );
+};
+
+export const PlusIcon = function () {
+  return (
+    <svg
+      width='51'
+      height='50'
+      viewBox='0 0 51 50'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <g clipPath='url(#clip0_159_255)'>
+        <path
+          d='M23.417 22.9167V10.4167H27.5837V22.9167H40.0837V27.0833H27.5837V39.5833H23.417V27.0833H10.917V22.9167H23.417Z'
+          fill='#141414'
+        />
+      </g>
+      <defs>
+        <clipPath id='clip0_159_255'>
+          <rect
+            width='50'
+            height='50'
+            fill='white'
+            transform='translate(0.5)'
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
