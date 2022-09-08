@@ -17,7 +17,7 @@ const Table = function (props) {
       </thead>
       <tbody>
         {props.data.map((item, i) => (
-          <tr key={item.id}>
+          <tr key={item.id + item[i].title}>
             {item.map((field, i) => (
               <td key={i}>
                 {field.image ? (
