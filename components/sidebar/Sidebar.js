@@ -45,7 +45,9 @@ const Sidebar = function () {
             <a
               name='Blog'
               className={
-                router.pathname === '/admin/blog' ? activeClass : inActiveClass
+                router.pathname.includes('/admin/blog')
+                  ? activeClass
+                  : inActiveClass
               }
             >
               <span className={styles.sidebar__icon}>
@@ -64,7 +66,9 @@ const Sidebar = function () {
             <a
               name='About'
               className={
-                router.pathname === '/admin/about' ? activeClass : inActiveClass
+                router.pathname.includes('/admin/about')
+                  ? activeClass
+                  : inActiveClass
               }
             >
               <span className={styles.sidebar__icon}>
@@ -83,7 +87,7 @@ const Sidebar = function () {
             <a
               name='Case Studies'
               className={
-                router.pathname === '/admin/case-study'
+                router.pathname.includes('/admin/case-study')
                   ? activeClass
                   : inActiveClass
               }
