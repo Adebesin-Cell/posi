@@ -1,5 +1,5 @@
 const CaseStudyView = function () {
-  return <h1>lol</h1>;
+  return <h1>View me</h1>;
 };
 
 export default CaseStudyView;
