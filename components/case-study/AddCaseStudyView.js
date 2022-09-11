@@ -6,6 +6,7 @@ import Input from '../ui/input/Input';
 import { PlusIcon } from '../../utils/icons/Icons';
 import useFileUpload from '../../hooks/use-file-upload';
 import { useState } from 'react';
+import Button from '../ui/button/Button';
 
 const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
@@ -66,6 +67,13 @@ const AddCaseStudyView = function () {
     });
   };
 
+  const addFontsHandler = function () {};
+
+  const formSubmitHandler = function (e) {
+    e.preventDefault();
+    alert('Adding case studies coming soon!');
+  };
+
   const CONVERT_IMAGE_SIZE_MB = 1000000;
 
   return (
@@ -74,7 +82,11 @@ const AddCaseStudyView = function () {
         <div className={styles.view__header}>
           <h1 className={styles.view__heading}>New Case Study</h1>
         </div>
-        <form action='' className={styles.view__form}>
+        <form
+          action=''
+          onSubmit={formSubmitHandler}
+          className={styles.view__form}
+        >
           <div className={styles.view__group}>
             <div className={styles.view__wrapper}>
               <label htmlFor='case-study-title' className={styles.view__label}>
@@ -452,9 +464,34 @@ const AddCaseStudyView = function () {
             </div>
           </div>
           <div className={styles.view__group}>
-            <label htmlFor='' className={styles.view__title}>
-              Typography
-            </label>
+            <div className={styles.typography}>
+              <label htmlFor='' className={styles.view__title}>
+                Typography
+              </label>
+              <Button
+                type='button'
+                onClick={addFontsHandler}
+                className={styles.typography__button}
+              >
+                <span>
+                  <PlusIcon />
+                </span>
+                <span>Add Font</span>
+              </Button>
+              <ul className={styles.typography__list}>
+                <li className={styles.typography__item}>Poppins</li>
+                <li className={styles.typography__item}>Montserrat</li>
+                <li className={styles.typography__item}>PT Sans</li>
+                <li className={styles.typography__item}>Poppins</li>
+                <li className={styles.typography__item}>Montserrat</li>
+                <li className={styles.typography__item}>PT Sans</li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.view__group}>
+            <Button type='submit' className={styles.view__submit}>
+              Save
+            </Button>
           </div>
         </form>
       </DashboardWrapper>
