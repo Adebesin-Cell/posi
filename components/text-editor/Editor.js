@@ -115,6 +115,9 @@ const Tiptap = (props) => {
   const editor = useEditor({
     extensions: [StarterKit],
     content: '',
+    autofocus: true,
+    editable: true,
+    injectCSS: false,
   });
 
   const getEditorContentInHTML = function () {

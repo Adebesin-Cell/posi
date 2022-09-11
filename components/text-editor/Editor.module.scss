@@ -1,4 +1,6 @@
 .editor {
+    display: flex;
+    flex-direction: column;
 
     &__menu {
         display: flex;
@@ -36,8 +38,8 @@
     }
 
     >div {
-        width: 100%;
-        max-width: 100%;
+        flex-grow: 1;
+        max-width: 900px;
         margin-top: var(--span-s);
         padding: var(--span-s);
         transition: all 300ms;
@@ -47,7 +49,6 @@
         overflow-y: scroll;
         border: none !important;
         outline: none !important;
-        overflow-x: hidden !important;
         display: block !important;
         white-space: normal !important;
 
@@ -64,20 +65,14 @@
             outline: none;
         }
 
+
         >*+* {
-            margin-top: var(--span-xs);
+            margin-top: 0.75em;
         }
 
         ul,
         ol {
             padding: 0 1rem;
-            font-family: var(--Satoshi);
-            font-size: var(--size-s);
-            font-weight: 400;
-            line-height: 21px;
-            letter-spacing: 0em;
-            text-align: left;
-            color: var(--black-900);
         }
 
         h1,
@@ -88,8 +83,8 @@
         h6 {
             font-family: var(--Satoshi);
             font-size: calc(var(--size-m) + 2px);
-            font-weight: var(--weight-xlg);
-            line-height: 28px;
+            font-weight: var(--weight-2xxlg);
+            line-height: 22px;
             letter-spacing: 0em;
             text-align: left;
             color: var(--black-900);
@@ -97,15 +92,12 @@
 
         p {
             font-family: var(--Satoshi);
-            font-size: calc(var(--size-s) + 1px);
-            font-weight: 400;
-            line-height: 22px;
+            font-size: var(--size-s);
+            font-weight: var(--weight-sm);
+            line-height: 19px;
             letter-spacing: 0em;
             text-align: left;
             color: var(--black-900);
-            white-space: normal !important;
-            max-width: 100%;
-            width: 100%;
         }
     }
 }
