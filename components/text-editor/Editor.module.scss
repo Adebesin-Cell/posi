@@ -36,6 +36,8 @@
     }
 
     >div {
+        width: 100%;
+        max-width: 100%;
         margin-top: var(--span-s);
         padding: var(--span-s);
         transition: all 300ms;
@@ -46,6 +48,8 @@
         overflow-y: scroll;
         border: none !important;
         outline: none !important;
+        overflow-x: hidden;
+        display: block;
 
         &::-webkit-scrollbar {
             display: none;

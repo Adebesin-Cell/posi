@@ -1,7 +1,7 @@
 const Blog = function () {
   return (
     <>
-      <h1>I`m Blog page</h1>
+      <h1>I`m Blog page </h1>
     </>
   );
 };
