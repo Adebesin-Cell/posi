@@ -121,6 +121,7 @@
     }
 
     &__submit {
+        margin-top: calc(var(--span-2xl) + var(--span-m));
         width: 100%;
         display: flex;
         justify-content: center;
@@ -283,6 +284,9 @@
 }
 
 .typography {
+    display: flex;
+    flex-direction: column;
+
     &__button {
         width: 100%;
         margin-top: var(--span-s);
@@ -323,6 +327,7 @@
         list-style-type: none;
     }
 
+
     &__item {
         display: flex;
         justify-content: center;
@@ -335,7 +340,79 @@
         font-weight: var(--weight-sm);
         line-height: 19px;
         letter-spacing: 0em;
+        text-align: center;
+        color: var(--black-900);
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+        transition: all 300ms;
+    }
+
+    &__modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 400px;
+        width: 100%;
+        border-radius: 10px;
+        background: var(--white-900);
+        padding: var(--span-m);
+        z-index: 4;
+        transition: all 300ms;
+    }
+
+    &__title {
+        font-family: var(--Satoshi);
+        font-size: var(--size-m);
+        font-weight: var(--weight-lg);
+        line-height: 22px;
+        letter-spacing: 0em;
         text-align: left;
         color: var(--black-900);
+    }
+
+    &__group {
+        margin-top: var(--span-s);
+    }
+
+    &__input {
+        height: 50px;
+        padding: calc(var(--span-xs) + 2px) var(--span-s);
+        font-family: var(--Satoshi);
+        font-size: var(--size-s);
+        font-weight: var(--weight-sm);
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--black-900);
+        display: block;
+        width: 100%;
+        border: 1px solid var(--black-900) !important;
+        border-radius: 5px;
+    }
+
+    &__btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--black-900);
+        font-family: var(--Satoshi);
+        font-size: var(--size-s);
+        font-weight: var(--weight-sm);
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: var(--white-900);
+        padding: var(--span-s) var(--span-2xl);
+        border-radius: 10px;
     }
 }

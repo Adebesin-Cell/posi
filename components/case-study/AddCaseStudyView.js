@@ -5,11 +5,15 @@ import styles from './AddCaseStudyView.module.scss';
 import Input from '../ui/input/Input';
 import { PlusIcon } from '../../utils/icons/Icons';
 import useFileUpload from '../../hooks/use-file-upload';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Button from '../ui/button/Button';
+import uuid from 'react-uuid';
 
 const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
+  const [fontModalisOpen, setFontModalisOpen] = useState(false);
+  const [fonts, setFonts] = useState([]);
+  const formInputRef = useRef();
 
   const {
     uploadFuntionHandler: uploadCoverImage,
@@ -67,7 +71,30 @@ const AddCaseStudyView = function () {
     });
   };
 
-  const addFontsHandler = function () {};
+  const openFontsModalHandler = function () {
+    setFontModalisOpen(true);
+  };
+
+  const closeFontsModalHandler = function () {
+    setFontModalisOpen(false);
+  };
+
+  const addFontsHandler = function () {
+    setFonts((prevFonts) => {
+      const newFont = { id: uuid(), name: formInputRef.current.value };
+      return [...prevFonts, newFont];
+    });
+
+    setFontModalisOpen(false);
+    // formInputRef.current.value = '';
+  };
+
+  const deleteFont = function (id) {
+    setFonts((prevFonts) => {
+      const updatedFonts = prevFonts.filter((font) => font.id !== id);
+      return [...updatedFonts];
+    });
+  };
 
   const formSubmitHandler = function (e) {
     e.preventDefault();
@@ -166,7 +193,7 @@ const AddCaseStudyView = function () {
           <div className={styles.view__group}>
             <div className={styles.view__wrapper}>
               <label htmlFor='case-study-type' className={styles.view__label}>
-                Project Type
+                Project Tag
               </label>
               <Input
                 className={styles.view__input}
@@ -174,6 +201,40 @@ const AddCaseStudyView = function () {
                 type='text'
                 name='case-study-type'
                 id='case-study-type'
+              />
+            </div>
+          </div>
+          <div className={styles.view__group}>
+            <div className={styles.view__wrapper}>
+              <label
+                htmlFor='case-study-type-color'
+                className={styles.view__label}
+              >
+                Project Tag Color
+              </label>
+              <Input
+                className={styles.view__input}
+                placeholder='Enter Project Tag Color'
+                type='text'
+                name='case-study-type-color'
+                id='case-study-type-color'
+              />
+            </div>
+          </div>
+          <div className={styles.view__group}>
+            <div className={styles.view__wrapper}>
+              <label
+                htmlFor='case-study-type-background'
+                className={styles.view__label}
+              >
+                Project Tag Background
+              </label>
+              <Input
+                className={styles.view__input}
+                placeholder='Enter Project Tag Background'
+                type='text'
+                name='case-study-type-background'
+                id='case-study-type-background'
               />
             </div>
           </div>
@@ -350,7 +411,7 @@ const AddCaseStudyView = function () {
                 type='file'
                 name='case-study-ideation-image'
                 className={styles.view__file}
-                id='case-study-cover-ideation-image'
+                id='case-study-ideation-image'
                 onChange={uploadIdeationImage}
                 accept='image/*'
               />
@@ -470,7 +531,7 @@ const AddCaseStudyView = function () {
               </label>
               <Button
                 type='button'
-                onClick={addFontsHandler}
+                onClick={openFontsModalHandler}
                 className={styles.typography__button}
               >
                 <span>
@@ -478,14 +539,49 @@ const AddCaseStudyView = function () {
                 </span>
                 <span>Add Font</span>
               </Button>
-              <ul className={styles.typography__list}>
-                <li className={styles.typography__item}>Poppins</li>
-                <li className={styles.typography__item}>Montserrat</li>
-                <li className={styles.typography__item}>PT Sans</li>
-                <li className={styles.typography__item}>Poppins</li>
-                <li className={styles.typography__item}>Montserrat</li>
-                <li className={styles.typography__item}>PT Sans</li>
-              </ul>
+              {fonts.length > 0 && (
+                <ul className={styles.typography__list}>
+                  {fonts.map((font) => (
+                    <li
+                      key={font.id}
+                      className={styles.typography__item}
+                      onDoubleClick={() => deleteFont(font.id)}
+                    >
+                      {font.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {fontModalisOpen && (
+                <>
+                  <div
+                    className={styles.typography__overlay}
+                    onClick={closeFontsModalHandler}
+                  >
+                    &nbsp;
+                  </div>
+                  <div className={styles.typography__modal}>
+                    <h1 className={styles.typography__title}>Add Font</h1>
+                    <div className={styles.typography__group}>
+                      <Input
+                        placeholder='e.g Poppins'
+                        className={styles.typography__input}
+                        type='text'
+                        ref={formInputRef}
+                      ></Input>
+                    </div>
+                    <div className={styles.typography__group}>
+                      <Button
+                        type='button'
+                        className={styles.typography__btn}
+                        onClick={addFontsHandler}
+                      >
+                        Add Font
+                      </Button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <div className={styles.view__group}>
