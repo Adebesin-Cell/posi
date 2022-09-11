@@ -8,6 +8,7 @@ import useFileUpload from '../../hooks/use-file-upload';
 import { useRef, useState } from 'react';
 import Button from '../ui/button/Button';
 import uuid from 'react-uuid';
+import { getStorage, ref } from 'firebase/storage';
 
 const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
