@@ -99,27 +99,6 @@ const Sidebar = function () {
             </a>
           </Link>
         </li>
-        <li className={styles.sidebar__item}>
-          <Link
-            href='/admin/test'
-            name='Case Studies'
-            className={styles.sidebar__link}
-          >
-            <a
-              name='Case Studies'
-              className={
-                router.pathname.includes('/admin/test')
-                  ? activeClass
-                  : inActiveClass
-              }
-            >
-              <span className={styles.sidebar__icon}>
-                <CaseStudyIcon2 />
-              </span>
-              <span className={styles.sidebar__text}>Just Testing</span>
-            </a>
-          </Link>
-        </li>
       </ul>
     </div>
   );
