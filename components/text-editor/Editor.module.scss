@@ -48,8 +48,9 @@
         overflow-y: scroll;
         border: none !important;
         outline: none !important;
-        overflow-x: hidden;
-        display: block;
+        overflow-x: hidden !important;
+        display: block !important;
+        white-space: normal !important;
 
         &::-webkit-scrollbar {
             display: none;
