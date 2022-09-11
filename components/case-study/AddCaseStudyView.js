@@ -13,7 +13,13 @@ const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
   const [fontModalisOpen, setFontModalisOpen] = useState(false);
   const [fonts, setFonts] = useState([]);
-  const formInputRef = useRef();
+  const [aboutProject, setAboutProject] = useState([]);
+  const caseStudyTitleRef = useRef();
+  const fontInputRef = useRef();
+  const caseStudyTagRef = useRef();
+  const caseStudyTagColorRef = useRef();
+  const caseStudyTagBgRef = useRef();
+  const caseStudyRoles = useRef();
 
   const {
     uploadFuntionHandler: uploadCoverImage,
@@ -49,10 +55,14 @@ const AddCaseStudyView = function () {
     console.log(html);
   };
 
+  const getAboutProjectContent = function (html) {
+    setAboutProject(html);
+  };
+
   const generateNewColorHandler = function () {
     setColors((prevColors) => [
       ...prevColors,
-      { id: Date.now().toString(), colorCode: '#ffffff' },
+      { id: uuid(), colorCode: '#ffffff' },
     ]);
   };
 
@@ -81,12 +91,12 @@ const AddCaseStudyView = function () {
 
   const addFontsHandler = function () {
     setFonts((prevFonts) => {
-      const newFont = { id: uuid(), name: formInputRef.current.value };
+      const newFont = { id: uuid(), name: fontInputRef.current.value };
       return [...prevFonts, newFont];
     });
 
     setFontModalisOpen(false);
-    // formInputRef.current.value = '';
+    // fontInputRef.current.value = '';
   };
 
   const deleteFont = function (id) {
@@ -98,7 +108,19 @@ const AddCaseStudyView = function () {
 
   const formSubmitHandler = function (e) {
     e.preventDefault();
-    alert('Adding case studies coming soon!');
+
+    const caseStudyData = {
+      caseStudyTitle: caseStudyTitleRef.current.value,
+      caseStudyAbout: aboutProject,
+      tag: caseStudyTagRef.current.value,
+      tagColor: caseStudyTagColorRef.current.value,
+      tabBg: caseStudyTagBgRef.current.value,
+      roles: caseStudyRoles.current.value.split(','),
+      fonts: fonts,
+      colors: colors,
+    };
+
+    console.log(caseStudyData);
   };
 
   const CONVERT_IMAGE_SIZE_MB = 1000000;
@@ -120,6 +142,7 @@ const AddCaseStudyView = function () {
                 Title
               </label>
               <Input
+                ref={caseStudyTitleRef}
                 className={styles.view__input}
                 placeholder='Enter Title'
                 type='text'
@@ -196,6 +219,7 @@ const AddCaseStudyView = function () {
                 Project Tag
               </label>
               <Input
+                ref={caseStudyTagRef}
                 className={styles.view__input}
                 placeholder='Enter Project Type'
                 type='text'
@@ -213,6 +237,7 @@ const AddCaseStudyView = function () {
                 Project Tag Color
               </label>
               <Input
+                ref={caseStudyTagColorRef}
                 className={styles.view__input}
                 placeholder='Enter Project Tag Color'
                 type='text'
@@ -230,6 +255,7 @@ const AddCaseStudyView = function () {
                 Project Tag Background
               </label>
               <Input
+                ref={caseStudyTagBgRef}
                 className={styles.view__input}
                 placeholder='Enter Project Tag Background'
                 type='text'
@@ -242,7 +268,7 @@ const AddCaseStudyView = function () {
             <label htmlFor='case-study-about' className={styles.view__title}>
               About Project
             </label>
-            <Tiptap getEditorContent={getEditorContent} />
+            <Tiptap getEditorContent={getAboutProjectContent} />
           </div>
           <div className={styles.view__group}>
             <div className={styles.view__wrapper}>
@@ -281,6 +307,7 @@ const AddCaseStudyView = function () {
                 Roles
               </label>
               <Input
+                ref={caseStudyRoles}
                 className={styles.view__input}
                 placeholder='Enter Roles'
                 type='text'
@@ -543,6 +570,7 @@ const AddCaseStudyView = function () {
                 <ul className={styles.typography__list}>
                   {fonts.map((font) => (
                     <li
+                      title='Double click to delete'
                       key={font.id}
                       className={styles.typography__item}
                       onDoubleClick={() => deleteFont(font.id)}
@@ -567,7 +595,7 @@ const AddCaseStudyView = function () {
                         placeholder='e.g Poppins'
                         className={styles.typography__input}
                         type='text'
-                        ref={formInputRef}
+                        ref={fontInputRef}
                       ></Input>
                     </div>
                     <div className={styles.typography__group}>
