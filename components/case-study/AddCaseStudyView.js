@@ -13,13 +13,19 @@ const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
   const [fontModalisOpen, setFontModalisOpen] = useState(false);
   const [fonts, setFonts] = useState([]);
-  const [aboutProject, setAboutProject] = useState([]);
+  const [aboutProject, setAboutProject] = useState('');
+  const [caseStudyEmphaty, setCaseStudyEmphaty] = useState('');
+  const [caseStudyIdeation, setCaseStudyIdeation] = useState('');
+
   const caseStudyTitleRef = useRef();
   const fontInputRef = useRef();
   const caseStudyTagRef = useRef();
+  const projectSummaryRef = useRef();
   const caseStudyTagColorRef = useRef();
   const caseStudyTagBgRef = useRef();
   const caseStudyRoles = useRef();
+  const caseStudyTools = useRef();
+  const caseStudyDuration = useRef();
 
   const {
     uploadFuntionHandler: uploadCoverImage,
@@ -57,6 +63,14 @@ const AddCaseStudyView = function () {
 
   const getAboutProjectContent = function (html) {
     setAboutProject(html);
+  };
+
+  const getProjectEmphaty = function (html) {
+    setCaseStudyEmphaty(html);
+  };
+
+  const getProjectIdeation = function (html) {
+    setCaseStudyIdeation(html);
   };
 
   const generateNewColorHandler = function () {
@@ -112,6 +126,11 @@ const AddCaseStudyView = function () {
     const caseStudyData = {
       caseStudyTitle: caseStudyTitleRef.current.value,
       caseStudyAbout: aboutProject,
+      caseStudySummary: projectSummaryRef.current.value,
+      caseStudyEmphaty: caseStudyEmphaty,
+      caseStudyIdeation: caseStudyIdeation,
+      caseStudyTools: caseStudyTools.current.value.split(','),
+      caseStudyDuration: caseStudyDuration.current.value,
       tag: caseStudyTagRef.current.value,
       tagColor: caseStudyTagColorRef.current.value,
       tabBg: caseStudyTagBgRef.current.value,
@@ -211,6 +230,7 @@ const AddCaseStudyView = function () {
               cols='30'
               rows='10'
               className={styles.view__textarea}
+              ref={projectSummaryRef}
             ></textarea>
           </div>
           <div className={styles.view__group}>
@@ -279,6 +299,7 @@ const AddCaseStudyView = function () {
                 Duration
               </label>
               <Input
+                ref={caseStudyDuration}
                 className={styles.view__input}
                 placeholder='Enter Project Duration'
                 type='text'
@@ -293,6 +314,7 @@ const AddCaseStudyView = function () {
                 Tools
               </label>
               <Input
+                ref={caseStudyTools}
                 className={styles.view__input}
                 placeholder='Enter Tools'
                 type='text'
@@ -364,7 +386,7 @@ const AddCaseStudyView = function () {
             <label htmlFor='case-study-empathy' className={styles.view__title}>
               Emphaty
             </label>
-            <Tiptap getEditorContent={getEditorContent} />
+            <Tiptap getEditorContent={getProjectEmphaty} />
           </div>
           <div className={styles.view__group}>
             <label
@@ -430,7 +452,7 @@ const AddCaseStudyView = function () {
             <label htmlFor='case-study-ideation' className={styles.view__title}>
               Ideation
             </label>
-            <Tiptap getEditorContent={getEditorContent} />
+            <Tiptap getEditorContent={getProjectIdeation} />
           </div>
           <div className={styles.view__group}>
             <div className={styles.view__card}>
