@@ -51,6 +51,7 @@
         outline: none !important;
         display: block !important;
         white-space: normal !important;
+        min-width: 100%;
 
         &::-webkit-scrollbar {
             display: none;

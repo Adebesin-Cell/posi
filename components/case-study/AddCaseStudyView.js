@@ -8,7 +8,9 @@ import useFileUpload from '../../hooks/use-file-upload';
 import { useRef, useState } from 'react';
 import Button from '../ui/button/Button';
 import uuid from 'react-uuid';
-import { getStorage, ref } from 'firebase/storage';
+// import { getStorage, ref } from 'firebase/storage';
+
+const CONVERT_IMAGE_SIZE_MB = 1000000;
 
 const AddCaseStudyView = function () {
   const [colors, setColors] = useState([]);
@@ -57,10 +59,6 @@ const AddCaseStudyView = function () {
     images: ideationImages,
     imageUrls: ideationImagesURL,
   } = useFileUpload();
-
-  const getEditorContent = function (html) {
-    console.log(html);
-  };
 
   const getAboutProjectContent = function (html) {
     setAboutProject(html);
@@ -140,10 +138,10 @@ const AddCaseStudyView = function () {
       colors: colors,
     };
 
+    // /casestudies/caseStudyId - {cover-image, empathyImage, ideation-image, user-persona-images, userflow-images}
+
     console.log(caseStudyData);
   };
-
-  const CONVERT_IMAGE_SIZE_MB = 1000000;
 
   return (
     <div className={styles.view}>
@@ -633,6 +631,87 @@ const AddCaseStudyView = function () {
                   </div>
                 </>
               )}
+            </div>
+          </div>
+          <div className={styles.view__group}>
+            <label
+              htmlFor='case-study-wireframes'
+              className={styles.view__title}
+            >
+              Wireframes
+            </label>
+            <div className={styles.wireframes}>
+              <h3 className={styles.view__subheading}>Low-FI Wireframes</h3>
+              <Button type='button' className={styles.wireframes__button}>
+                <span>
+                  <PlusIcon />
+                </span>
+                <span>Low-FI Wireframes</span>
+              </Button>
+              <input
+                type='file'
+                id='case-study-low-fi-mobile-image'
+                className={styles.wireframes__input}
+              />
+              <input
+                type='file'
+                id='case-study-low-fi-desktop-image'
+                className={styles.wireframes__input}
+              />
+              <div className={styles.wireframes__wrapper}>
+                <label
+                  htmlFor='case-study-low-fi-mobile-image'
+                  className={styles.wireframes__label}
+                >
+                  <div className={styles.wireframes__card}>
+                    <div className={styles['wireframes__image-box']}>
+                      <h3 className={styles.wireframes__title}>Mobile</h3>
+                      <div className={styles.upload__icon}>
+                        <PlusIcon />
+                      </div>
+                    </div>
+                    <div className={styles.upload__details}>
+                      <h1 className={styles.upload__name}>
+                        {userflows[0] && userflows[0].name}
+                        {!userflows[0] && 'Low Wireframes'}
+                      </h1>
+                      <p className={styles.upload__size}>
+                        {userflows[0] &&
+                          `${(
+                            userflows[0].size / CONVERT_IMAGE_SIZE_MB
+                          ).toFixed(2)}mb`}
+                        {!userflows[0] && 'Size'}
+                      </p>
+                    </div>
+                  </div>
+                </label>
+                <label
+                  htmlFor='case-study-low-fi-desktop-image'
+                  className={styles.wireframes__label}
+                >
+                  <div className={styles.wireframes__card}>
+                    <div className={styles['wireframes__image-box']}>
+                      <h3 className={styles.wireframes__title}>Desktop</h3>
+                      <div className={styles.upload__icon}>
+                        <PlusIcon />
+                      </div>
+                    </div>
+                    <div className={styles.upload__details}>
+                      <h1 className={styles.upload__name}>
+                        {userflows[0] && userflows[0].name}
+                        {!userflows[0] && 'Low Wireframes'}
+                      </h1>
+                      <p className={styles.upload__size}>
+                        {userflows[0] &&
+                          `${(
+                            userflows[0].size / CONVERT_IMAGE_SIZE_MB
+                          ).toFixed(2)}mb`}
+                        {!userflows[0] && 'Size'}
+                      </p>
+                    </div>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
           <div className={styles.view__group}>

@@ -132,7 +132,7 @@
     }
 
     &__submit {
-        margin-top: calc(var(--span-2xl) + var(--span-m));
+        margin-top: calc(var(--span-2xl));
         width: 100%;
         display: flex;
         justify-content: center;
@@ -147,6 +147,16 @@
         color: var(--white-900);
         padding: var(--span-s) var(--span-2xl);
         border-radius: 10px;
+    }
+
+    &__subheading {
+        font-family: var(--Satoshi);
+        font-size: var(--size-s);
+        font-weight: var(--weight-sm);
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--black-900);
     }
 }
 
@@ -425,5 +435,78 @@
         color: var(--white-900);
         padding: var(--span-s) var(--span-2xl);
         border-radius: 10px;
+    }
+}
+
+.wireframes {
+    margin-top: var(--span-xs);
+
+    &__button {
+        width: 100%;
+        margin-top: var(--span-s);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #F2F2F2;
+        font-family: var(--Satoshi);
+        font-size: var(--size-s);
+        font-weight: var(--weight-sm);
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #5A5A5A;
+        padding: var(--span-s) var(--span-2xl);
+        border-radius: 10px;
+
+        span {
+            &:not(:last-child) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: calc(var(--span-xs) + 5px);
+            }
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__wrapper {
+        margin-top: calc(var(--span-xs) + 5px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    &__card {
+        padding: calc(var(--span-xs) + 5px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: var(--white-900);
+        min-height: 130px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        opacity: 0;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        display: none;
+    }
+
+    &__title {
+        font-family: var(--Satoshi);
+        font-size: var(--size-s);
+        font-weight: var(--weight-sm);
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--black-300);
+        margin-bottom: var(--span-xs);
     }
 }
