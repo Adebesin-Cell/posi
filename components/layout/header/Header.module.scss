@@ -3,6 +3,10 @@
     justify-content: space-between;
     padding-top: var(--span-xl);
 
+    @media only screen and (max-width: 600px) {
+        padding-top: var(--span-s);
+    }
+
     &__logo {
         display: flex;
     }
@@ -13,6 +17,32 @@
 
         a {
             text-decoration: none;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 9;
+    }
+
+    &__line {
+        height: 3px;
+        background: var(--white-900);
+
+        &--lg {
+            width: 32px;
+        }
+
+        &--sm {
+            width: 18px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
         }
     }
 }

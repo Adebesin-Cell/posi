@@ -1,6 +1,10 @@
 .nav {
     align-self: center;
 
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+
     &__list {
         list-style-type: none;
         display: flex;

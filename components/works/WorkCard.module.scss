@@ -1,5 +1,15 @@
 .card {
     position: relative;
+    min-height: 650px !important;
+    padding-bottom: var(--span-s);
+
+    @media only screen and (max-width: 990px) {
+        min-height: 550px !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        min-height: 450px !important;
+    }
 
     span {
         box-sizing: border-box !important;
@@ -18,10 +28,11 @@
 
     &__image {
         display: block;
-        height: 650px !important;
         object-fit: cover !important;
         width: 100% !important;
         border-radius: 10px !important;
+        min-height: 100% !important;
+        margin: 0 !important;
     }
 
     &__overlay {
@@ -36,6 +47,18 @@
         align-items: flex-end;
         padding-bottom: calc(2 * var(--span-xl));
         padding-left: calc(2 * var(--span-xl));
+        padding-right: calc(2 * var(--span-xl));
+
+        @media only screen and (max-width: 990px) {
+            padding-bottom: calc(var(--span-xl));
+            padding-left: calc(var(--span-xl));
+            padding-right: calc(var(--span-xl));
+        }
+
+        @media only screen and (max-width: 600px) {
+            padding-left: calc(var(--span-xs) + 5px);
+            padding-right: calc(var(--span-xs) + 5px);
+        }
     }
 
     &__info {
@@ -53,6 +76,11 @@
         text-align: left;
         color: var(--white-900);
         opacity: 0.5;
+
+        @media only screen and (max-width: 600px) {
+            font-size: calc(var(--size-xs) - 1px);
+            line-height: 15px;
+        }
     }
 
     &__heading {
@@ -64,6 +92,11 @@
         letter-spacing: 0.02em;
         text-align: left;
         color: var(--white-900);
+
+        @media only screen and (max-width: 600px) {
+            font-size: var(--size-l);
+            line-height: 32px;
+        }
     }
 
     &__paragraph {
@@ -76,6 +109,11 @@
         letter-spacing: 0.01em;
         text-align: left;
         color: var(--white-900);
+
+        @media only screen and (max-width: 600px) {
+            font-size: var(--size-s);
+            line-height: 21px;
+        }
     }
 
     &__link--box {
@@ -83,6 +121,7 @@
     }
 
     &__link {
+        display: inline-block;
         text-decoration: none;
         border: 1px solid #FFFFFF;
         padding: calc(var(--span-xs) + 5px) var(--span-m);

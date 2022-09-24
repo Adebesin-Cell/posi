@@ -4,6 +4,11 @@
     padding-top: calc(3 * var(--span-xl));
     padding-bottom: calc(3 * var(--span-xl));
 
+    @media only screen and (max-width: 600px) {
+        padding-left: var(--span-m);
+        padding-right: var(--span-m);
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -19,6 +24,11 @@
         text-align: center;
         color: var(--white-900);
         text-transform: capitalize;
+
+        @media only screen and (max-width: 600px) {
+            font-size: var(--size-l);
+            line-height: 31px;
+        }
     }
 
     &__paragraph {
@@ -30,6 +40,11 @@
         letter-spacing: 0.02em;
         text-align: center;
         color: var(--white-900);
+
+        @media only screen and (max-width: 600px) {
+            font-size: var(--size-s);
+            line-height: 15px;
+        }
     }
 
     &__link--box {
@@ -39,6 +54,7 @@
     }
 
     &__link {
+        display: inline-block;
         text-decoration: none;
         border: 1px solid #FFFFFF;
         padding: calc(var(--span-xs) + 5px) var(--span-m);
