@@ -15,6 +15,30 @@ const Menu = function (props) {
             <Logo />
           </a>
         </Link>
+        <ul className={styles.menu__list}>
+          <li className={styles.menu__item}>
+            <Link href='/blog'>
+              <a
+                name='Blog'
+                className={styles.menu__link}
+                onClick={props.close}
+              >
+                Blog
+              </a>
+            </Link>
+          </li>
+          <li className={styles.menu__item}>
+            <Link href='/about'>
+              <a
+                name='About me'
+                className={styles.menu__link}
+                onClick={props.close}
+              >
+                About
+              </a>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
