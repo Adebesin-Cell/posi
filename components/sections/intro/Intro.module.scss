@@ -41,6 +41,11 @@
         text-align: left;
         color: var(--white-900);
 
+        @media only screen and (max-width: 1140px) {
+            font-size: calc(var(--size-xl) + 4px);
+            line-height: 42px;
+        }
+
         @media only screen and (max-width: 990px) {
             text-align: center;
         }
@@ -64,6 +69,11 @@
         letter-spacing: 0.02em;
         text-align: left;
         color: var(--white-900);
+
+        @media only screen and (max-width: 1140px) {
+            font-size: calc(var(--size-m));
+            line-height: 26px;
+        }
 
         @media only screen and (max-width: 990px) {
             text-align: center;
@@ -147,6 +157,11 @@
         align-items: center;
         justify-content: center;
 
+        @media only screen and (max-width: 1140px) {
+            width: 32px;
+            height: 32px;
+        }
+
         @media only screen and (max-width: 600px) {
             width: 24px;
             height: 24px;
@@ -155,6 +170,11 @@
         svg {
             width: 40px;
             height: 40px;
+
+            @media only screen and (max-width: 1140px) {
+                width: 32px;
+                height: 32px;
+            }
 
             @media only screen and (max-width: 600px) {
                 width: 24px;

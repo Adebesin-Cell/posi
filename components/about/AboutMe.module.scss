@@ -16,10 +16,20 @@
 .about {
     margin-top: calc(3 * var(--span-xl));
 
+    @media only screen and (max-width: 990px) {
+        margin-top: var(--span-2xl);
+    }
+
     &__wrapper {
         display: flex;
         padding-bottom: var(--span-2xl);
         justify-content: space-between;
+
+        @media only screen and (max-width: 990px) {
+            flex-direction: column;
+            gap: var(--span-m);
+            padding-bottom: 0px;
+        }
     }
 
     &__box {
@@ -27,6 +37,10 @@
 
         &:not(:last-child) {
             margin-right: var(--span-xl);
+
+            @media only screen and (max-width: 990px) {
+                margin-right: 0px;
+            }
         }
     }
 
@@ -157,6 +171,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-bottom: calc(3 * var(--span-xl));
 
+    @media only screen and (max-width: 990px) {
+        margin-top: var(--span-2xl);
+        padding-top: var(--span-xl);
+        padding-bottom: var(--span-l);
+    }
+
     &__heading {
         font-family: var(--Clash-Display);
         font-size: calc(var(--size-xl) + 7px);
@@ -170,6 +190,10 @@
     &__wrapper {
         margin-top: var(--span-s);
         display: flex;
+
+        @media only screen and (max-width: 990px) {
+            flex-direction: column;
+        }
     }
 
     &__box {
@@ -177,6 +201,11 @@
 
         &:not(:last-child) {
             margin-right: calc(3 * var(--span-xl));
+
+            @media only screen and (max-width: 990px) {
+                margin-right: 0px;
+                margin-bottom: var(--span-s);
+            }
         }
     }
 

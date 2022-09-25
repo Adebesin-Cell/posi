@@ -15,5 +15,16 @@
             1px 1px 0 var(--white-900),
             1px -1px 0 var(--white-900),
             -1px -1px 0 var(--white-900);
+
+        @media only screen and (max-width: 1200px) {
+            font-size: calc(2 * var(--size-2xl));
+            line-height: 102px;
+        }
+
+        @media only screen and (max-width: 990px) {
+            margin-top: var(--span-2xl);
+            font-size: calc(var(--size-2xl) + var(--size-xs));
+            line-height: 74px;
+        }
     }
 }
