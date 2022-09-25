@@ -60,6 +60,12 @@ const AddCaseStudyView = function () {
     imageUrls: ideationImagesURL,
   } = useFileUpload();
 
+  const {
+    uploadFunctionHandler: uploadLowFiMobileImage,
+    images: lowFiMobileImages,
+    imageUrls: lowFiMobileImagesURL,
+  } = useFileUpload();
+
   const getAboutProjectContent = function (html) {
     setAboutProject(html);
   };
