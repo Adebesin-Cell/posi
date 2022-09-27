@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 import { getDatabase } from 'firebase/database';
-import { useEffect } from 'react';
+import { getStorage } from 'firebase/storage';
 
 // Firebase configs
 const firebaseConfig = {
@@ -30,4 +30,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const realtimeDB = getDatabase(app);
 
-export { initFirebase, db, realtimeDB };
+const storage = getStorage(app);
+
+export { initFirebase, db, realtimeDB, storage };
