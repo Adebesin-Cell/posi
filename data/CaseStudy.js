@@ -1,6 +1,6 @@
 import caseStudy from '../assets/images/caseStudy--0.png';
 import caseStudyTwo from '../assets/images/caseStudy--2.png';
-import caseStudyThree from '../assets/images/caseStudy--3.png';
+import caseStudyFour from '../assets/images/caseStudy--4.png';
 import caseStudyOne from '../assets/images/caseStudy--main.png';
 
 export const CaseStudies = [
@@ -28,7 +28,8 @@ export const CaseStudies = [
     tagBackground: '#FBFF34',
     tagColor: '#141414',
     liveLink: '',
-    caseStudyLink: 'case-study/2',
+    caseStudyLink:
+      'https://www.behance.net/gallery/153930943/Slay-Co-A-fashion-brand-website',
     description:
       'A fashion brand website landing page designed by using the design thinking process  to solve the problem of confusion from users.',
     target: '_blank',
@@ -42,7 +43,8 @@ export const CaseStudies = [
     tagBackground: '#5034FF',
     tagColor: '#FFFFFF',
     liveLink: '',
-    caseStudyLink: 'case-study/3',
+    caseStudyLink:
+      'https://www.behance.net/gallery/153926373/Nezko-A-health-care-website',
     description:
       'A hospital website for reaching out to people who are not available to attend the hospital physically.',
     target: '_blank',
@@ -50,14 +52,14 @@ export const CaseStudies = [
   {
     id: 4,
     title: 'Product Designer',
-    name: 'NFT Cards',
-    image: caseStudyThree,
+    name: 'Toure',
+    image: caseStudyFour,
     tag: 'E-commerce',
     tagBackground: '#FFA500',
     tagColor: '#141414',
     liveLink: '',
-    caseStudyLink: 'case-study/4',
-    description: 'A NFT website landing page design',
+    caseStudyLink: 'https://www.behance.net/gallery/154147667/TOURE',
+    description: 'A tour booking landing page concept.',
     target: '_blank',
   },
 ];
