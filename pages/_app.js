@@ -8,7 +8,11 @@ initFirebase();
 function MyApp({ Component, pageProps }) {
   return (
     <AuthContextProvider>
-      <GoogleAnalytics gaMeasurementId='G-W9CFEC023Q' trackPageViews />
+      <GoogleAnalytics
+        gaMeasurementId='G-W9CFEC023Q'
+        trackPageViews
+        strategy='lazyOnload'
+      />
       <Component {...pageProps} />
     </AuthContextProvider>
   );
