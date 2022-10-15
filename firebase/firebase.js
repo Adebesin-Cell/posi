@@ -26,10 +26,8 @@ const initFirebase = function () {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const realtimeDB = getDatabase(app);
-
 const storage = getStorage(app);
 
-export { initFirebase, db, realtimeDB, storage };
+export { initFirebase, db, realtimeDB, storage, app };
