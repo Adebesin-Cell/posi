@@ -93,6 +93,7 @@ const AboutMe = function () {
               <a
                 target='_blank'
                 rel='noopener noreferrer'
+                // eslint-disable-next-line react/no-unknown-property
                 download
                 href='/Adekanmbi-Ayomiposi-resume.pdf'
                 className={styles.about__button}
