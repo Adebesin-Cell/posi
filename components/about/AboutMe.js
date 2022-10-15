@@ -55,13 +55,12 @@ const AboutMe = function () {
             <ul className={styles.about__list}>
               <h1 className={styles.about__title}>Experience</h1>
               <li className={styles.about__item}>Product designer at EF4A</li>
-              <li className={styles.about__item}>Freelance Designer</li>
             </ul>
             <ul className={styles.about__list}>
               <h1 className={styles.about__title}>Socials</h1>
               <li className={styles.about__item}>
                 <a
-                  href='https://dribbble.com/'
+                  href='https://dribbble.com/Posiay'
                   className={styles.about__link}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -71,7 +70,7 @@ const AboutMe = function () {
               </li>
               <li className={styles.about__item}>
                 <a
-                  href='https://dribbble.com/'
+                  href='https://www.behance.net/ayomipoadekanm'
                   className={styles.about__link}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -81,7 +80,7 @@ const AboutMe = function () {
               </li>
               <li className={styles.about__item}>
                 <a
-                  href='https://dribbble.com/'
+                  href='https://twitter.com/AyomiposiUIUX'
                   className={styles.about__link}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -91,7 +90,13 @@ const AboutMe = function () {
               </li>
             </ul>
             <ul className={styles.about__list}>
-              <a href='' className={styles.about__button}>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                download
+                href='/Adekanmbi-Ayomiposi-resume.pdf'
+                className={styles.about__button}
+              >
                 Download Resume
               </a>
             </ul>
@@ -111,17 +116,17 @@ const AboutMe = function () {
               <ul className={styles.contact__list}>
                 <li className={styles.contact__item}>
                   <a
-                    href='mailto:adekanmbiayomiposi@gmail.com'
+                    href='mailto:Adekanmbiayomiposi2003@gmail.com'
                     target='_blank'
                     rel='noopener noreferrer'
                     className={styles.contact__link}
                   >
-                    adekanmbiayomiposi@gmail.com
+                    Adekanmbiayomiposi2003@gmail.com
                   </a>
                 </li>
                 <li className={styles.contact__item}>
                   <a
-                    href=''
+                    href='https://www.linkedin.com/in/ayomiposi-adekanmbi-b961351b4/'
                     target='_blank'
                     rel='noopener noreferrer'
                     className={styles.contact__link}

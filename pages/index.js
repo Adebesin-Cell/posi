@@ -1,14 +1,11 @@
 import Head from 'next/head';
 import Header from '../components/layout/header/Header';
 import Container from '../components/ui/container/Container';
-import { initFirebase } from '../firebase/firebase';
 import styles from '../styles/Home.module.scss';
 import Intro from '../components/sections/intro/Intro';
 import CaseStudies from '../components/sections/caseStudies/CaseStudies';
 import { useRef } from 'react';
 import Footer from '../components/layout/footer/Footer';
-
-initFirebase();
 
 export default function Home() {
   const caseStudiesRef = useRef();

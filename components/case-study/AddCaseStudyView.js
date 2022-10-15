@@ -8,10 +8,18 @@ import useFileUpload from '../../hooks/use-file-upload';
 import { useRef, useState } from 'react';
 import Button from '../ui/button/Button';
 import uuid from 'react-uuid';
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytes,
+  listAll,
+} from 'firebase/storage';
 
 const CONVERT_IMAGE_SIZE_MB = 1000000;
 
 const AddCaseStudyView = function () {
+  const storage = getStorage();
   const [colors, setColors] = useState([]);
   const [fontModalisOpen, setFontModalisOpen] = useState(false);
   const [fonts, setFonts] = useState([]);
@@ -124,7 +132,35 @@ const AddCaseStudyView = function () {
     });
   };
 
-  const formSubmitHandler = function (e) {
+  const uploadFile = async function (caseStudyImageData = {}) {
+    const fileID = uuid();
+    const imageMap = Object.entries(caseStudyImageData).map((key) => {
+      return key;
+    });
+
+    imageMap.forEach((imageObj, i) => {
+      imageObj[1].map((file) => {
+        const imageID = uuid();
+
+        const fileRef = ref(
+          storage,
+          `case-study/${fileID}/${imageObj[0]}/${imageID}`
+        );
+
+        uploadBytes(fileRef, file).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+          console.log(snapshot);
+          getDownloadURL(snapshot.ref).then((url) => {
+            console.log(url);
+          });
+        });
+      });
+    });
+
+    console.log(imageMap);
+  };
+
+  const formSubmitHandler = async function (e) {
     e.preventDefault();
 
     const caseStudyData = {
@@ -142,6 +178,15 @@ const AddCaseStudyView = function () {
       fonts: fonts,
       colors: colors,
     };
+
+    const caseStudyImageMap = {
+      'cover-image': CoverImages,
+      'user-personas': UserPersonas,
+    };
+
+    console.log(CoverImages);
+
+    uploadFile(caseStudyImageMap);
 
     // /casestudies/caseStudyId - {cover-image, empathyImage, ideation-image, user-persona-images, userflow-images}
 
