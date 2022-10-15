@@ -23,7 +23,11 @@ const WorkCard = function (props) {
           />
           <div className={styles['card__link--box']}>
             <Link href={props.caseStudyLink} name={props.name}>
-              <a name={props.name} className={styles.card__link}>
+              <a
+                name={props.name}
+                target={props.target}
+                className={styles.card__link}
+              >
                 View Case Study
               </a>
             </Link>

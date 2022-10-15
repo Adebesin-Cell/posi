@@ -13,9 +13,11 @@ export const CaseStudies = [
     tagBackground: '#FF3434',
     tagColor: '#FFFFFF',
     liveLink: '',
-    caseStudyLink: 'case-study/1',
+    caseStudyLink:
+      'https://www.behance.net/gallery/147160423/Shop-Easy-OnlineOffline-Ecommerce-application',
     description:
       'A project designed to make shopping easier for its users. Of course, there are lots of online shopping platforms, but it was thought that the need for a shopping platform that would put the needs of its users upfront is needed.',
+    target: '_blank',
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ export const CaseStudies = [
     caseStudyLink: 'case-study/2',
     description:
       'A fashion brand website landing page designed by using the design thinking process  to solve the problem of confusion from users.',
+    target: '_blank',
   },
   {
     id: 3,
@@ -42,6 +45,7 @@ export const CaseStudies = [
     caseStudyLink: 'case-study/3',
     description:
       'A hospital website for reaching out to people who are not available to attend the hospital physically.',
+    target: '_blank',
   },
   {
     id: 4,
@@ -54,5 +58,6 @@ export const CaseStudies = [
     liveLink: '',
     caseStudyLink: 'case-study/4',
     description: 'A NFT website landing page design',
+    target: '_blank',
   },
 ];

@@ -12,6 +12,7 @@ const Works = function () {
           title={caseStudy.title}
           name={caseStudy.name}
           description={caseStudy.description}
+          target={caseStudy.target}
           {...caseStudy}
         ></WorkCard>
       ))}
