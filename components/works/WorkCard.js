@@ -28,7 +28,7 @@ const WorkCard = function (props) {
                 target={props.target}
                 className={styles.card__link}
               >
-                View Case Study
+                View Project
               </a>
             </Link>
           </div>

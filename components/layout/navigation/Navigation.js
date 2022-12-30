@@ -12,17 +12,6 @@ const Navigation = function () {
     <nav className={styles.nav}>
       <ul className={styles.nav__list}>
         <li className={styles.nav__item}>
-          <Link href='/blog' className={styles.nav__link} name='Blogs'>
-            <a
-              className={
-                router.pathname === '/blog' ? activeClass : inActiveClass
-              }
-            >
-              Blog
-            </a>
-          </Link>
-        </li>
-        <li className={styles.nav__item}>
           <Link href='/about' className={styles.nav__link} name='About Me'>
             <a
               className={
@@ -30,6 +19,17 @@ const Navigation = function () {
               }
             >
               About
+            </a>
+          </Link>
+        </li>
+        <li className={styles.nav__item}>
+          <Link href='/contact' className={styles.nav__link} name='contact me'>
+            <a
+              className={
+                router.pathname === '/contact' ? activeClass : inActiveClass
+              }
+            >
+              Contact
             </a>
           </Link>
         </li>

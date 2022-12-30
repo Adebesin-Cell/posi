@@ -17,13 +17,13 @@ const Menu = function (props) {
         </Link>
         <ul className={styles.menu__list}>
           <li className={styles.menu__item}>
-            <Link href='/blog'>
+            <Link href='/contact'>
               <a
-                name='Blog'
+                name='Contact me'
                 className={styles.menu__link}
                 onClick={props.close}
               >
-                Blog
+                Contact
               </a>
             </Link>
           </li>
