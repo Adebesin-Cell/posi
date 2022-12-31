@@ -11,6 +11,10 @@
         letter-spacing: 0.02em;
         text-align: left;
         color: var(--white-500);
+
+        @media only screen and (max-width: 1024px) {
+            margin-top: var(--span-2xl);
+        }
     }
 
     &__heading {
@@ -21,6 +25,16 @@
         letter-spacing: 0.07em;
         text-align: left;
         color: var(--white-900);
+
+        @media only screen and (max-width: 1024px) {
+            font-size: 100px;
+            line-height: 125px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            font-size: 56px;
+            line-height: 69px;
+        }
     }
 
     &__me {
@@ -34,6 +48,11 @@
         top: -10px;
         right: -10px;
         line-height: 0;
+
+        @media only screen and (max-width: 600px) {
+            top: -5px;
+            right: -15px;
+        }
     }
 
     &__form {
@@ -44,6 +63,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--span-xl);
+
+        @media only screen and (max-width: 600px) {
+            gap: var(--span-m);
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__box {
@@ -87,6 +111,58 @@
     &__wrapper {
         &:not(:last-child) {
             margin-bottom: var(--span-xl);
+
+            @media only screen and (max-width: 600px) {
+                margin-bottom: var(--span-m);
+            }
+        }
+    }
+
+    &__textarea {
+        margin-top: 8px;
+        background: none;
+        width: 100%;
+        display: block;
+        outline: none;
+        border: 1px solid #E7E7E7;
+        padding: var(--span-xs) var(--span-s);
+        font-family: var(--Satoshi);
+        font-size: var(--size-m);
+        font-weight: 500;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #E7E7E7;
+        transition: all 300ms;
+
+        &:focus {
+            transition: all 300ms;
+            border: 2px solid #E7E7E7;
+        }
+    }
+
+    &__button {
+        height: 50px;
+        padding: calc(var(--span-xs) + 5px) var(--span-2xl);
+        text-align: center;
+        font-family: var(--Clash-Display);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #141414;
+        background: #E7E7E7;
+        outline: none;
+        border: 1px solid #E7E7E7;
+        transition: all 300ms;
+        text-transform: uppercase;
+        width: 100%;
+        cursor: pointer;
+
+        &:focus {
+            transition: all 300ms;
+            border: 1px solid #E7E7E7;
         }
     }
 }

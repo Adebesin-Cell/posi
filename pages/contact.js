@@ -3,8 +3,11 @@ import Header from '../components/layout/header/Header';
 import Container from '../components/ui/container/Container';
 import styles from '../styles/Contact.module.scss';
 import Footer from '../components/layout/footer/Footer';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Home() {
+  const [state, handleSubmit] = useForm('mknawdkr');
+
   return (
     <>
       <Head>
@@ -41,7 +44,11 @@ export default function Home() {
               </div>
             </span>
           </h1>
-          <form action='' className={styles.contact__form}>
+          <form
+            action=''
+            className={styles.contact__form}
+            onSubmit={handleSubmit}
+          >
             <div className={styles.contact__wrapper}>
               <div className={styles.contact__group}>
                 <div className={styles.contact__box}>
@@ -49,9 +56,16 @@ export default function Home() {
                     Name
                   </label>
                   <input
+                    required
+                    name='name'
                     type='text'
                     id='name'
                     className={styles.contact__input}
+                  />
+                  <ValidationError
+                    prefix='Name'
+                    field='name'
+                    errors={state.errors}
                   />
                 </div>
                 <div className={styles.contact__box}>
@@ -59,9 +73,16 @@ export default function Home() {
                     Email
                   </label>
                   <input
+                    required
+                    name='email'
                     type='email'
                     id='email'
                     className={styles.contact__input}
+                  />
+                  <ValidationError
+                    prefix='Email'
+                    field='email'
+                    errors={state.errors}
                   />
                 </div>
               </div>
@@ -72,10 +93,48 @@ export default function Home() {
                   Subject
                 </label>
                 <input
+                  required
+                  name='subject'
                   type='text'
                   id='subject'
                   className={styles.contact__input}
                 />
+                <ValidationError
+                  prefix='Subject'
+                  field='subject'
+                  errors={state.errors}
+                />
+              </div>
+            </div>
+            <div className={styles.contact__wrapper}>
+              <div className={styles.contact__box}>
+                <label htmlFor='message' className={styles.contact__label}>
+                  Message
+                </label>
+                <textarea
+                  required
+                  name='message'
+                  id='message'
+                  cols='30'
+                  rows='10'
+                  className={styles.contact__textarea}
+                ></textarea>
+                <ValidationError
+                  prefix='Message'
+                  field='message'
+                  errors={state.errors}
+                />
+              </div>
+            </div>
+            <div className={styles.contact__wrapper}>
+              <div className={styles.contact__box}>
+                <button
+                  className={styles.contact__button}
+                  disabled={state.submitting}
+                >
+                  {!state.submitting && 'Submit'}
+                  {state.submitting && 'Loading...'}
+                </button>
               </div>
             </div>
           </form>
