@@ -10,14 +10,12 @@ const Footer = function () {
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div className={styles.footer__wrapper}>
-        <h1 className={styles.footer__heading}>Check out my blog</h1>
-        <p className={styles.footer__paragraph}>
-          I write blogs on UI/UX design when I'm less busy.
-        </p>
+        <h1 className={styles.footer__heading}>Let's work together!</h1>
+        <p className={styles.footer__paragraph}>Keep in touch.</p>
         <div className={styles['footer__link--box']}>
-          <Link href='/blog' name='Blog'>
-            <a name='Blog' className={styles.footer__link}>
-              Go to blog
+          <Link href='/contact' name='Contact'>
+            <a name='=Contact me' className={styles.footer__link}>
+              Go to Contact
             </a>
           </Link>
         </div>
