@@ -23,6 +23,16 @@ export default function Home() {
           content='Ayomiposi is a product designer, I’m passionate about design and i love to create solutions for
                   complex problems through user-centric design.'
         />
+        <meta
+          property='og:title'
+          content='Posi - Adekanmbi Ayomiposi'
+          key='title'
+        />
+        <meta
+          name='og:image'
+          key='og:image'
+          content='https://ayoposi.vercel.app/images/og-image.png'
+        />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.home}>

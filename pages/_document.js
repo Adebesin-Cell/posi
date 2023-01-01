@@ -16,10 +16,6 @@ export default function Document() {
           href='https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap'
           rel='stylesheet'
         ></link>
-        <meta
-          property='og:image'
-          content='https://ayoposi.vercel.app/images/og-image.png'
-        />
       </Head>
       <body>
         <Main />
