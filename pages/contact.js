@@ -11,11 +11,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Posi - Adekanmbi Ayomiposi</title>
+        <title>Contact | Posi - Adekanmbi Ayomiposi</title>
         <meta
           name='description'
           content='Ayomiposi is a product designer, I’m passionate about design and i love to create solutions for
                   complex problems through user-centric design.'
+        />
+        <meta
+          property='og:title'
+          content='Contact | Posi - Adekanmbi Ayomiposi'
+          key='title'
+        />
+        <meta
+          name='og:image'
+          key='og:image'
+          content='https://ayoposi.vercel.app/images/og-image.png'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
