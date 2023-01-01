@@ -16,7 +16,7 @@ const SEOHeader = ({ router }) => {
         site_name: 'Posi - Adekanmbi Ayomiposi',
         images: [
           {
-            url: 'https://ayoposi.vercel.app/images/og-image-default.png',
+            url: 'https://ayoposi.vercel.app/images/og-image.png',
             width: 1200,
             height: 630,
             alt: 'Posi - Adekanmbi Ayomiposi'
