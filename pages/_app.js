@@ -2,12 +2,14 @@ import '../styles/globals.scss';
 import { initFirebase } from '../firebase/firebase';
 import { AuthContextProvider } from '../store/auth-context';
 import Script from 'next/script';
+import SEOHeader from '../components/SEO/Default';
 
 initFirebase();
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <AuthContextProvider>
+      <SEOHeader router={router} />
       <Component {...pageProps} />
       <Script
         strategy='lazyOnload'
